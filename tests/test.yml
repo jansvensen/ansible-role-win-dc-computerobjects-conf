@@ -2,4 +2,4 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - inf-dc-manage-computerobjects
+    - ansible-role-win-dc-computerobjects-conf

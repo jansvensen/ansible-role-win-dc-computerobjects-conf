@@ -8,18 +8,10 @@ function move-computer {
 
 }
 
-$ComputerObject = "citrix-ctrl-01"
+$ComputerObject = "t-citrix-ctrl-01"
 $TargetOU = "OU=Citrix,OU=03_Environment,OU=Computer,OU=Objects,DC=dt,DC=democloud"
 Move-computer -ComputerObject $ComputerObject -TargetOU $TargetOU
 
-$ComputerObject = "citrix-rdsh-01"
+$ComputerObject = "t-citrix-rdsh-01"
 $TargetOU = "OU=RDSH,OU=Citrix,OU=03_Environment,OU=Computer,OU=Objects,DC=dt,DC=democloud"
 Move-computer -ComputerObject $ComputerObject -TargetOU $TargetOU
-
-$ComputerObject = "vmware-ctrl-01"
-$TargetOU = "OU=RDSH,OU=VMware,OU=03_Environment,OU=Computer,OU=Objects,DC=dt,DC=democloud"
-#Move-computer -ComputerObject $ComputerObject -TargetOU $TargetOU
-
-$ComputerObject = "vmware-rdsh-01"
-$TargetOU = "OU=RDSH,OU=VMware,OU=03_Environment,OU=Computer,OU=Objects,DC=dt,DC=democloud"
-#Move-computer -ComputerObject $ComputerObject -TargetOU $TargetOU
