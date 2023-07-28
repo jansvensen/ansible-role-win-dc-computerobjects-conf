@@ -13,6 +13,11 @@
 #    args:
 #      creates: C:\Script\Script-import.txt
 
+- name: Create Log Folder
+  win_file:
+    path: C:\Logs
+    state: directory
+
 - name: Create variables
   script: create-variables.ps1
   args:
