@@ -13,9 +13,18 @@
 #    args:
 #      creates: C:\Script\Script-import.txt
 
-- name: Move ad objects
-  microsoft.ad.object:
+#- name: Move ad objects
+#  microsoft.ad.object:
+#    name: citrix-ctrl-01
+#    path: OU=02_Administration,OU=Computer,OU=Objects,DC=dt,DC=democloud
+#    type: computer
+#    state: present
+
+- name: move computer account to correct OU
+  win_domain_computer:
     name: citrix-ctrl-01
-    path: OU=02_Administration,OU=Computer,OU=Objects,DC=dt,DC=democloud
-    type: Computer
-    state: present
+    dns_hostname: citrix-ctrl-01.dt.democloud
+    domain_username: "{{ ansible_user }}"
+    domain_password: "{{ ansible_password }}"
+    # domain_server: "{{ domain }}"
+    ou: OU=02_Administration,OU=Computer,OU=Objects,DC=dt,DC=democloud
