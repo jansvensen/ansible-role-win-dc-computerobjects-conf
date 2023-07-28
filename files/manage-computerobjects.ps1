@@ -1,3 +1,9 @@
+Param(
+    [Parameter(Mandatory=$true)]$DCComputerObjects=$env:dc_computer_objects
+)
+
+$DCComputerObjects | Out-File c:\logs\lala.txt
+
 function move-computer {
     [Parameter(Mandatory=$true)][String]$ComputerObject
     [Parameter(Mandatory=$true)][String]$TargetOU
