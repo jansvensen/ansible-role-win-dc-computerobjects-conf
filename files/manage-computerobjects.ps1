@@ -1,6 +1,6 @@
-Param(
-    [Parameter(Mandatory=$true)]$DCComputerObjects=$env:DCComputerObjects
-)
+# Import variables from xml file
+$ImportedVariables = Import-Clixml "C:\Logs\create-variables.xml"
+$DCComputerObjects = $ImportedVariables.DCComputerObjects
 
 $DCComputerObjects | Out-File c:\logs\lala.txt
 
