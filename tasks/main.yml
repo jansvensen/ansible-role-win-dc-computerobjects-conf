@@ -20,10 +20,6 @@
 
 - name: Create variables
   script: create-variables.ps1
-  args:
-    creates: 
-      - C:\Logs\create-variables.xml
-      - C:\Logs\create-variables-plain.txt
   environment:
     dc_computer_objects: "{{ dc_computer_objects }}"
 
