@@ -13,18 +13,33 @@
 #    args:
 #      creates: C:\Script\Script-import.txt
 
-- name: Create Log Folder
-  win_file:
-    path: C:\Logs
-    state: directory
+  - name: Create Log Folder
+    win_file:
+      path: C:\Logs
+      state: directory
 
 #- name: Create variables
 #  script: create-variables.ps1
 #  environment:
 #    dc_computer_objects: "{{ dc_computer_objects }}"
 
-- name: Manage Computerobjects
-  script: files/manage-computerobjects.ps1 --computerobjects "{{ dc_computer_objects }}"
-  register: script_return
-- debug: 
-    msg: "{{ script_return.stdout }}"
+  - name: test vars file
+    hosts: localhost
+    vars_files:
+      - vars_sb_task.yml
+    tasks:
+
+  - name: Add File to var
+    set_fact:
+      body: "{{ item }}"
+    with_file: "windows-dc-domain.yml"
+
+  - name: test vars
+    debug:
+      msg: "{{ body }}"
+
+  - name: Manage Computerobjects
+    script: files/manage-computerobjects.ps1 --computerobjects "{{ dc_computer_objects }}"
+    register: script_return
+  - debug: 
+      msg: "{{ script_return.stdout }}"
