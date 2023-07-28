@@ -23,14 +23,9 @@
 #  environment:
 #    dc_computer_objects: "{{ dc_computer_objects }}"
 
-  - name: Add File to var
-    set_fact:
-      body: "{{ item }}"
-    with_file: "group_vars/windows-dc-domain.yml"
-
   - name: test vars
     debug:
-      msg: "{{ body }}"
+      msg: "{{ dc_computer_objects }}"
 
   - name: Manage Computerobjects
     script: files/manage-computerobjects.ps1 --computerobjects "{{ dc_computer_objects }}"
