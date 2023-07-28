@@ -24,3 +24,6 @@
     creates: C:\Logs\create-variables.xml
   environment:
     dc_computer_objects: "{{ dc_computer_objects }}"
+
+- name: Manage Computerobjects
+  script: files/manage-computerobjects.ps1
