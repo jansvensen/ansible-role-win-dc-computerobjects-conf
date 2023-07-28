@@ -26,7 +26,7 @@
   - name: Add File to var
     set_fact:
       body: "{{ item }}"
-    with_file: "windows-dc-domain.yml"
+    with_file: "group_vars/windows-dc-domain.yml"
 
   - name: test vars
     debug:
