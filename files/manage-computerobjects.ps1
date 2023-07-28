@@ -3,7 +3,7 @@ param
     [Parameter(Mandatory=$True,Position=1)][string]$computerobjects
 )
 
-$computerobjects
+$computerobjects | Out-String
 
 #function move-computer {
 #    [Parameter(Mandatory=$true)][String]$ComputerObject
