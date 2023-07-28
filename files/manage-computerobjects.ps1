@@ -4,6 +4,8 @@ $DCComputerObjects = $ImportedVariables.DCComputerObjects
 
 $DCComputerObjects | Out-File c:\logs\lala.txt
 
+$DCComputerObjects() | sort value -Descending | Add-Content D:\Logs\lolo.txt
+
 #function move-computer {
 #    [Parameter(Mandatory=$true)][String]$ComputerObject
 #    [Parameter(Mandatory=$true)][String]$TargetOU
