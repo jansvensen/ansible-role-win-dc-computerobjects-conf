@@ -1,8 +1,8 @@
 param 
 ( 
-    [Parameter(Mandatory=$True,Position=1)][string]$computerobjects
+    [Parameter(Mandatory=$True,Position=1)]$computerobjects
 )
-
+$computerobjects 
 $computerobjects | Out-String
 
 #function move-computer {
