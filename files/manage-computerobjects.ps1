@@ -1,10 +1,9 @@
-# Import variables from xml file
-$ImportedVariables = Import-Clixml "C:\Logs\create-variables.xml"
-$DCComputerObjects = $ImportedVariables.DCComputerObjects
+param 
+( 
+    [Parameter(Mandatory=$True,Position=1)][string]$computerobjects
+)
 
-$DCComputerObjects | Out-File c:\logs\lala.txt
-
-$DCComputerObjects
+$computerobjects | Out-File c:\logs\output.txt
 
 #function move-computer {
 #    [Parameter(Mandatory=$true)][String]$ComputerObject

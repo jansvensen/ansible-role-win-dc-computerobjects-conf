@@ -18,10 +18,10 @@
     path: C:\Logs
     state: directory
 
-- name: Create variables
-  script: create-variables.ps1
-  environment:
-    dc_computer_objects: "{{ dc_computer_objects }}"
+#- name: Create variables
+#  script: create-variables.ps1
+#  environment:
+#    dc_computer_objects: "{{ dc_computer_objects }}"
 
 - name: Manage Computerobjects
-  script: files/manage-computerobjects.ps1
+  script: files/manage-computerobjects.ps1 --computerobjects "{{ dc_computer_objects }}"
