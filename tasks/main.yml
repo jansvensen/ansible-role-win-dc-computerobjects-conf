@@ -26,7 +26,7 @@
   - name: test vars
     debug:
       msg: "{{ item.name }}"
-    with_items: "{{ dc_computer_objects.name }}"
+    with_items: "{{ dc_computer_objects }}"
 
   #- name: Manage Computerobjects
   #  script: files/manage-computerobjects.ps1 --computername "{{ item.name }}" --ou "{{ item.ou }}"    
