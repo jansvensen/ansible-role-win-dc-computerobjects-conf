@@ -1,37 +1,12 @@
 ---
 #####################################
-### Move ad objects
+### Move AD objects
 #####################################
 
-#  - name: Create Script directory
-#    ansible.windows.win_file:
-#      path: c:\Script
-#      state: directory
-
-#  - name: Run Script
-#    script: files/manage-computerobjects.ps1
-#    args:
-#      creates: C:\Script\Script-import.txt
-
-  - name: Create Log Folder
-    win_file:
-      path: C:\Logs
-      state: directory
-
-#- name: Create variables
-#  script: create-variables.ps1
-#  environment:
-#    dc_computer_objects: "{{ dc_computer_objects }}"
-
-  - name: test vars
-    debug:
-      msg: "{{ item.name }}"
+  - name: Manage Computerobjects
+    script: files/manage-computerobjects.ps1 "{{ item.name }}" "{{ item.ou }}"    
     with_items: "{{ dc_computer_objects }}"
+    register: script_return
 
-  #- name: Manage Computerobjects
-  #  script: files/manage-computerobjects.ps1 --computername "{{ item.name }}" --ou "{{ item.ou }}"    
-  #  with_items: "{{ dc_computer_objects }}"
-  #  register: script_return
-
-  #- debug: 
-  #    msg: "{{ script_return.stdout }}"
+  - debug: 
+      msg: "{{ script_return }}"
