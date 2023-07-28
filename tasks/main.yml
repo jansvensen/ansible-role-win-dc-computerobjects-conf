@@ -28,7 +28,9 @@
       msg: "{{ dc_computer_objects }}"
 
   - name: Manage Computerobjects
-    script: files/manage-computerobjects.ps1 --computername "{{ item.name }}" --ou "{{ item.ou }}"
+    script: files/manage-computerobjects.ps1 --computername "{{ item.name }}" --ou "{{ item.ou }}"    
+    with_items: "{{ dc_computer_objects }}"
     register: script_return
+
   - debug: 
       msg: "{{ script_return.stdout }}"
