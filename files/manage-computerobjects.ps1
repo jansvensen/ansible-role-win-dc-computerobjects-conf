@@ -1,9 +1,10 @@
 param 
 ( 
-    [Parameter(Mandatory=$True,Position=1)]$computerobjects
+    [Parameter(Mandatory=$True,Position=1)]$computername,
+    [Parameter(Mandatory=$True,Position=2)]$ou
 )
-$computerobjects 
-$computerobjects | Out-String
+$computername | out-file c:\logs\computername.txt -Append
+$ou | out-file c:\logs\ou.txt -Append
 
 #function move-computer {
 #    [Parameter(Mandatory=$true)][String]$ComputerObject
