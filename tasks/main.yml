@@ -6,7 +6,3 @@
   - name: Manage Computerobjects
     script: files/manage-computerobjects.ps1 "{{ item.name }}" "{{ item.ou }}"    
     with_items: "{{ dc_computer_objects }}"
-    register: script_return
-
-  - debug: 
-      msg: "{{ script_return }}"
