@@ -17,5 +17,5 @@
   microsoft.ad.object:
     name: citrix-ctrl-01
     path: OU=02_Administration,OU=Computer,OU=Objects,DC=dt,DC=democloud
-    type: computer
+    type: Computer
     state: present
