@@ -1,11 +1,5 @@
 $outputObj = @{
-    "HostbaseUrl" = $env:citrix_storefront_HostbaseUrl
-    "FarmServers" = $env:citrix_storefront_FarmServers
-    "StoreVirtualPath" = $env:citrix_storefront_StoreVirtualPath
-    "TransportType" = $env:citrix_storefront_TransportType
-    "GatewayUrl" = $env:citrix_storefront_GatewayUrl
-    "GatewaySTAUrls"= $env:citrix_storefront_GatewaySTAUrls
-    "GatewayName" = $env:citrix_storefront_GatewayName
+    "DCComputerObjects" = $env:dc_computer_objects
 }
     
-$outputObj | Export-Clixml "C:\Logs\sf-vars.xml" -Force
+$outputObj | Export-Clixml "C:\Logs\create-variables.xml" -Force

@@ -18,10 +18,4 @@
   args:
     creates: C:\Logs\create-variables.xml
   environment:
-    citrix_storefront_HostbaseUrl: "{{ citrix_storefront_HostbaseUrl }}"
-    citrix_storefront_FarmServers: "{{ citrix_storefront_FarmServers }}"
-    citrix_storefront_StoreVirtualPath: "{{ citrix_storefront_StoreVirtualPath }}"
-    citrix_storefront_TransportType: "{{ citrix_storefront_TransportType }}"
-    citrix_storefront_GatewayUrl: "{{ citrix_storefront_GatewayUrl }}"
-    citrix_storefront_GatewaySTAUrls: "{{ citrix_storefront_GatewaySTAUrls }}"
-    citrix_storefront_GatewayName: "{{ citrix_storefront_GatewayName }}"
+    dc_computer_objects: "{{ dc_computer_objects }}"
