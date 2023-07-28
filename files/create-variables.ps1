@@ -3,4 +3,4 @@ $outputObj = @{
 }
     
 $outputObj | Export-Clixml "C:\Logs\create-variables.xml" -Force
-$outputObj | Out-File "C:\Logs\create-variables-plain.xml" -Force
+$outputObj | Out-String | Out-File "C:\Logs\create-variables-plain.txt" -Force
