@@ -1,5 +1,5 @@
 Param(
-    [Parameter(Mandatory=$true)]$DCComputerObjects=$env:dc_computer_objects
+    [Parameter(Mandatory=$true)]$DCComputerObjects=$env:DCComputerObjects
 )
 
 $DCComputerObjects | Out-File c:\logs\lala.txt
