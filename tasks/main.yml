@@ -23,12 +23,6 @@
 #  environment:
 #    dc_computer_objects: "{{ dc_computer_objects }}"
 
-  - name: test vars file
-    hosts: localhost
-    vars_files:
-      - vars_sb_task.yml
-    tasks:
-
   - name: Add File to var
     set_fact:
       body: "{{ item }}"
