@@ -3,7 +3,7 @@ param
     [Parameter(Mandatory=$True,Position=1)][string]$computerobjects
 )
 
-$computerobjects | Out-File c:\logs\output.txt
+$computerobjects | Export-Clixml "C:\Logs\create-variables.xml" -Force
 
 #function move-computer {
 #    [Parameter(Mandatory=$true)][String]$ComputerObject
