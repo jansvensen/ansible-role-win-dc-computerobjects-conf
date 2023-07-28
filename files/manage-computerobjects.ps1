@@ -1,11 +1,9 @@
 function move-computer {
-
     [Parameter(Mandatory=$true)][String]$ComputerObject
     [Parameter(Mandatory=$true)][String]$TargetOU
     
     $ComputerObjectDN = (Get-ADComputer $ComputerObject).DistinguishedName
     Move-ADObject -Identity $ComputerObjectDN -TargetPath $TargetOU
-
 }
 
 $ComputerObject = "citrix-ctrl-01"
